@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matadorbet Marketing – Paketler</title>
+  <meta name="description" content="Matadorbet: Logo, GIF ve Sosyal Görseller paketlerini tek tıkla indirin."/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#ff4c2e;
+      --navy:#162235;
+      --navy-2:#1d2b41;
+      --text:#f6fbff;
+      --muted:#b7c5d6;
+      --shadow:0 14px 40px rgba(0,0,0,.35);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:radial-gradient(1200px 800px at 80% -10%, rgba(30,227,255,.07), transparent),
+                 radial-gradient(800px 600px at -20% 120%, rgba(255,76,46,.10), transparent),
+                 var(--navy);
+      color:var(--text)}
+    .container{max-width:900px;margin:0 auto;padding:28px 20px 72px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .brand img{height:40px}
+    .brand-badge{font-weight:800;font-size:18px;opacity:.9}
+    .pill{padding:6px 12px;border-radius:999px;background:var(--navy-2);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:13px}
+    .hero{margin-top:28px}
+    h1{margin:0 0 8px;font-size:clamp(28px,4vw,46px);font-weight:800}
+    .subtitle{margin:0;color:var(--muted);font-size:18px}
+    .card{margin-top:26px;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+    .packs{display:grid;gap:16px}
+    .pack{padding:18px;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:rgba(255,255,255,.03)}
+    .pack h3{margin:0 0 6px 0;font-size:16px}
+    .pack .desc{margin:0 0 12px 0;color:var(--muted);font-size:14px}
+    .download-btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:linear-gradient(180deg, var(--brand), #e43f25);color:#fff;font-weight:700;padding:12px 20px;border-radius:14px;box-shadow:0 10px 20px rgba(228,63,37,.35)}
+    footer{margin-top:56px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <a class="brand" href="#">
+        <img src="assets/matadorbet-logo.png" alt="Matadorbet logo" />
+        <span class="brand-badge">Marketing</span>
+      </a>
+      <div class="pill" id="clock">--:--</div>
+    </header>
+
+    <section class="hero">
+      <h1>Matadorbet Marketing dünyasına hoş geldiniz</h1>
+      <p class="subtitle">Tüm görsel ihtiyaçlarınız <strong>tek klasörde</strong>.</p>
+    </section>
+
+    <section class="card" aria-label="Paketler">
+      <div class="packs">
+        <div class="pack">
+          <h3>Matadorbet Logo</h3>
+          <p class="desc">PNG, SVG, PDF logo seti.</p>
+          <a class="download-btn" id="btn-logo" href="#" download>İndir</a>
+        </div>
+        <div class="pack">
+          <h3>Matadorbet GIF</h3>
+          <p class="desc">Animasyonlu banner/gif paketleri.</p>
+          <a class="download-btn" id="btn-gif" href="#" download>İndir</a>
+        </div>
+        <div class="pack">
+          <h3>Matadorbet Sosyal Görseller</h3>
+          <p class="desc">Sosyal medya kampanya görselleri.</p>
+          <a class="download-btn" id="btn-social" href="#" download>İndir</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Matadorbet Marketing</span>
+      <span>Destek: <a href="mailto:marketing@matadorbet.com" style="color:var(--brand);text-decoration:none;font-weight:700">marketing@matadorbet.com</a></span>
+    </footer>
+  </div>
+
+  <script>
+    function pad(n){return n.toString().padStart(2,'0')}
+    function tick(){const d=new Date();const mon=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];document.getElementById('clock').textContent=`${d.getDate()} ${mon[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`} setInterval(tick,1000);tick();
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // === İNDİRME LİNKLERİ ===
+    // Burada kendi repo/release linklerini ekle.
+    // document.getElementById('btn-logo').href   = '.../Matadorbet-Logo.zip';
+    // document.getElementById('btn-gif').href    = '.../Matadorbet-GIF.zip';
+    // document.getElementById('btn-social').href = '.../Matadorbet-Sosyal-Gorseller.zip';
+  </script>
+</body>
+</html>
