@@ -21,17 +21,18 @@
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:
+      background: url('background.jpg') no-repeat center center fixed, 
         radial-gradient(1200px 800px at 80% -10%, rgba(30,227,255,.07), transparent),
         radial-gradient(800px 600px at -20% 120%, rgba(255,76,46,.10), transparent),
         var(--navy);
+      background-size: cover;
       color:var(--text)
     }
     .container{max-width:900px;margin:0 auto;padding:28px 20px 72px}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
     .brand img{height:40px}
-    .brand-badge{font-weight:800;font-size:18px;opacity:.9;color:#fff} /* yazı beyaz */
+    .brand-badge{font-weight:800;font-size:18px;opacity:.9;color:#fff}
     .pill{padding:6px 12px;border-radius:999px;background:var(--navy-2);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:13px}
     .hero{margin-top:28px}
     h1{margin:0 0 8px;font-size:clamp(28px,4vw,46px);font-weight:800}
@@ -49,8 +50,7 @@
   <div class="container">
     <header class="nav">
       <a class="brand" href="#">
-        <!-- Repo kökündeki logo dosyan: boşluk ve parantezler URL-encode edildi -->
-        <img src="matador%20beyaz%20%284%29.png" alt="Matadorbet logo" />
+        <img src="matador%20beyaz%20(4).png" alt="Matadorbet logo" />
         <span class="brand-badge">Marketing</span>
       </a>
       <div class="pill" id="clock">--:--</div>
@@ -88,24 +88,14 @@
   </div>
 
   <script>
-    // Saat
     function pad(n){return n.toString().padStart(2,'0')}
-    function tick(){
-      const d=new Date();
-      const mon=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];
-      document.getElementById('clock').textContent =
-        `${d.getDate()} ${mon[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
-    }
-    setInterval(tick,1000); tick();
-    document.getElementById('year').textContent = new Date().getFullYear();
+    function tick(){const d=new Date();const mon=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];document.getElementById('clock').textContent=`${d.getDate()} ${mon[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`} setInterval(tick,1000);tick();
+    document.getElementById('year').textContent=new Date().getFullYear();
 
-    // === İNDİRME LİNKLERİ (Release -> latest) ===
-    document.getElementById('btn-logo').href   =
-      'https://github.com/matador-bet/Matadorbet/releases/latest/download/MATADORBET.LOGO.zip';
-    document.getElementById('btn-gif').href    =
-      'https://github.com/matador-bet/Matadorbet/releases/latest/download/MATADORBET.ANIMASYONLU.GIF.zip';
-    document.getElementById('btn-social').href =
-      'https://github.com/matador-bet/Matadorbet/releases/latest/download/MATADORBET.BONUSLAR.zip';
+    // === İNDİRME LİNKLERİ ===
+    document.getElementById('btn-logo').href   = 'https://github.com/matador-bet/Matadorbet/releases/latest/download/MATADORBET.LOGO.zip';
+    document.getElementById('btn-gif').href    = 'https://github.com/matador-bet/Matadorbet/releases/latest/download/MATADORBET.ANIMASYONLU.GIF.zip';
+    document.getElementById('btn-social').href = 'https://github.com/matador-bet/Matadorbet/releases/latest/download/MATADORBET.BONUSLAR.zip';
   </script>
 </body>
 </html>
